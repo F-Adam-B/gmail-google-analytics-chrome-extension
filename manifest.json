@@ -1,0 +1,6 @@
+{
+	"name": "Gmail Analytics Chrom Extension",
+	"version": "1.0",
+	"description": "Pushes event to google analytics when email opened from gmail",
+	"manifest_version": 2
+}
