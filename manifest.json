@@ -2,5 +2,18 @@
 	"name": "Gmail Analytics Chrom Extension",
 	"version": "1.0",
 	"description": "Pushes event to google analytics when email opened from gmail",
+	"permissions": ["https://*/*", "storage"],
+	"background": {
+		"scripts": ["./JS/asyncTrackingCode.js", "./JS/background.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://mail.google.com/*"],
+			"js": ["./JS/asyncTracking.js"],
+			"run_at": "document_end"
+		}
+	],
+	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
 	"manifest_version": 2
 }
